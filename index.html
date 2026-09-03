@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pabalo & Nokuzola</title>
+
+<title>Pabalo & Nokuzola | Wedding Invitation</title>
 
 <style>
 *{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
 
 body{
 margin:0;
@@ -14,6 +17,7 @@ background:#f8f5ed;
 color:#3f5549;
 font-family:Georgia,serif;
 text-align:center;
+line-height:1.6;
 }
 
 .hero{
@@ -24,6 +28,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 background:linear-gradient(135deg,#f8f5ed,#e5eee6,#f8f5ed);
+position:relative;
 }
 
 .flowers{
@@ -32,17 +37,18 @@ margin-bottom:20px;
 }
 
 .monogram{
-width:110px;
-height:110px;
+width:115px;
+height:115px;
 border:2px solid #b49755;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 font-family:cursive;
-font-size:42px;
+font-size:43px;
 color:#b49755;
 margin-bottom:25px;
+box-shadow:0 0 0 7px rgba(180,151,85,.12);
 }
 
 .small{
@@ -65,7 +71,7 @@ color:#b49755;
 .quote{
 font-style:italic;
 font-size:20px;
-max-width:600px;
+max-width:650px;
 margin:20px auto;
 }
 
@@ -95,15 +101,63 @@ padding:30px 20px;
 border-radius:20px;
 border:1px solid #c5b27b;
 box-shadow:0 8px 25px rgba(0,0,0,.08);
+margin-bottom:25px;
 }
 
 .card h3{
 color:#b49755;
 letter-spacing:2px;
+margin-bottom:5px;
 }
 
 .card p{
 font-size:19px;
+margin:5px 0 15px;
+}
+
+.countdown{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+max-width:600px;
+margin:25px auto;
+}
+
+.count-box{
+background:white;
+border:1px solid #c5b27b;
+border-radius:15px;
+padding:15px 5px;
+box-shadow:0 5px 15px rgba(0,0,0,.06);
+}
+
+.count-box span{
+display:block;
+font-size:28px;
+font-weight:bold;
+color:#3f5549;
+}
+
+.count-box small{
+font-size:12px;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#b49755;
+}
+
+.map-button{
+display:inline-block;
+margin-top:15px;
+padding:13px 25px;
+border-radius:30px;
+background:#3f5549;
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+.map-button:hover{
+background:#b49755;
 }
 
 .notice{
@@ -122,6 +176,12 @@ border:1px solid #b8c6bb;
 border-radius:10px;
 font-size:16px;
 font-family:Georgia,serif;
+background:#fffdf8;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
 }
 
 button{
@@ -133,6 +193,10 @@ background:#3f5549;
 color:white;
 font-size:18px;
 cursor:pointer;
+}
+
+button:hover{
+background:#b49755;
 }
 
 #message{
@@ -152,8 +216,31 @@ font-size:40px;
 }
 
 @media(max-width:600px){
-.names{font-size:45px}
-.title{font-size:38px}
+
+.names{
+font-size:45px;
+}
+
+.title{
+font-size:38px;
+}
+
+.countdown{
+gap:6px;
+}
+
+.count-box{
+padding:12px 3px;
+}
+
+.count-box span{
+font-size:23px;
+}
+
+.count-box small{
+font-size:10px;
+}
+
 }
 </style>
 </head>
@@ -196,9 +283,44 @@ Pabalo <span class="amp">&</span> Nokuzola
 <p>Grayson Manor</p>
 <p>71 Burnside Rd, Bulawayo</p>
 
-<h3>TIME</h3>
+<a
+class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Grayson+Manor%2C+71+Burnside+Rd%2C+Bulawayo"
+target="_blank"
+rel="noopener">
+📍 Open Location in Google Maps
+</a>
+
+<h3 style="margin-top:25px;">TIME</h3>
 <p>Guests seated by 09:30</p>
 <p>Ceremony begins at 10:00</p>
+
+</div>
+
+
+<div class="title">Counting Down to Forever</div>
+
+<div class="countdown">
+
+<div class="count-box">
+<span id="days">0</span>
+<small>Days</small>
+</div>
+
+<div class="count-box">
+<span id="hours">0</span>
+<small>Hours</small>
+</div>
+
+<div class="count-box">
+<span id="minutes">0</span>
+<small>Minutes</small>
+</div>
+
+<div class="count-box">
+<span id="seconds">0</span>
+<small>Seconds</small>
+</div>
 
 </div>
 
@@ -262,7 +384,7 @@ Thank you for celebrating this beautiful beginning with us. ❤️
 </section>
 
 
-<section>
+<section id="rsvp">
 
 <div class="title">RSVP</div>
 
@@ -273,21 +395,42 @@ Kindly let us know if you will be joining us.
 <form id="rsvpForm">
 
 <label>Your Name</label>
-<input id="guestName" type="text" placeholder="Enter your name" required>
+
+<input
+id="guestName"
+type="text"
+placeholder="Enter your name"
+required>
+
 
 <label>Will you be joining us?</label>
 
 <select id="attendance" required>
+
 <option value="">Please select</option>
-<option>Yes, I will attend</option>
-<option>Sorry, I cannot attend</option>
+
+<option value="Yes, I will attend">
+Yes, I will attend
+</option>
+
+<option value="Sorry, I cannot attend">
+Sorry, I cannot attend
+</option>
+
 </select>
+
 
 <label>Message</label>
 
-<textarea id="note" placeholder="Optional message"></textarea>
+<textarea
+id="note"
+placeholder="Optional message">
+</textarea>
 
-<button type="submit">Send RSVP</button>
+
+<button type="submit">
+💌 Send RSVP
+</button>
 
 <div id="message"></div>
 
@@ -311,9 +454,104 @@ Pabalo & Nokuzola
 
 <script>
 
+/* PERSONALISED GUEST NAME */
+
 const params = new URLSearchParams(window.location.search);
 const guest = params.get("guest");
 
 if(guest){
-document.getElementById("guestName").value =
-decodeURIComponent(guest
+
+const decodedGuest = decodeURIComponent(guest);
+
+document.getElementById("guestName").value = decodedGuest;
+
+}
+
+
+/* LIVE COUNTDOWN */
+
+const weddingDate =
+new Date("October 18, 2026 10:00:00").getTime();
+
+function updateCountdown(){
+
+const now = new Date().getTime();
+
+const distance = weddingDate - now;
+
+if(distance <= 0){
+
+document.getElementById("days").textContent="0";
+document.getElementById("hours").textContent="0";
+document.getElementById("minutes").textContent="0";
+document.getElementById("seconds").textContent="0";
+
+return;
+}
+
+const days =
+Math.floor(distance/(1000*60*60*24));
+
+const hours =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+const seconds =
+Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").textContent=days;
+document.getElementById("hours").textContent=hours;
+document.getElementById("minutes").textContent=minutes;
+document.getElementById("seconds").textContent=seconds;
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* RSVP */
+
+document
+.getElementById("rsvpForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name =
+document.getElementById("guestName").value;
+
+const attendance =
+document.getElementById("attendance").value;
+
+const note =
+document.getElementById("note").value;
+
+const subject =
+"Wedding RSVP - " + name;
+
+const body =
+"Pabalo & Nokuzola Wedding RSVP\n\n" +
+"Guest: " + name + "\n" +
+"Response: " + attendance + "\n" +
+"Message: " + note;
+
+document.getElementById("message").textContent =
+"Thank you, " + name + "! Opening your email app...";
+
+window.location.href =
+"mailto:pabalonokuzola@gmail.com" +
+"?subject=" +
+encodeURIComponent(subject) +
+"&body=" +
+encodeURIComponent(body);
+
+});
+
+</script>
+
+</body>
+</html>
