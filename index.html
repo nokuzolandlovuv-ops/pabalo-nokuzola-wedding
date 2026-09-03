@@ -1,1574 +1,251 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pabalo & Nokuzola</title>
+<title>Pabalo & Nokuzola | Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-
-html{
-scroll-behavior:smooth;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-margin:0;
-background:#fffdf8;
-color:#354034;
-font-family:"Cormorant Garamond",serif;
-text-align:center;
-overflow-x:hidden;
+  background:#f8f5ed;
+  color:#34483d;
+  font-family:"Cormorant Garamond",serif;
+  text-align:center;
+  line-height:1.6;
 }
 
-/* ---------- FLORAL DECORATIONS ---------- */
-
-.flower{
-position:absolute;
-font-size:42px;
-opacity:.8;
-pointer-events:none;
-}
-
-.flower.top-left{
-top:15px;
-left:12px;
-transform:rotate(-20deg);
-}
-
-.flower.top-right{
-top:15px;
-right:12px;
-transform:rotate(20deg);
-}
-
-.flower.bottom-left{
-bottom:10px;
-left:15px;
-transform:rotate(20deg);
-}
-
-.flower.bottom-right{
-bottom:10px;
-right:15px;
-transform:rotate(-20deg);
-}
-
-.flower.small{
-font-size:28px;
-}
-
-.decor{
-font-size:28px;
-letter-spacing:8px;
-color:#c7a45b;
-margin:12px 0;
-}
-
-/* ---------- ENVELOPE ---------- */
-
-#cover{
-position:fixed;
-inset:0;
-z-index:10;
-background:
-radial-gradient(circle at 20% 20%,#dfe7dc 0,transparent 28%),
-radial-gradient(circle at 80% 80%,#ead9aa 0,transparent 25%),
-#fffdf8;
-display:grid;
-place-items:center;
-transition:1s;
-}
-
-#cover.hide{
-opacity:0;
-pointer-events:none;
-}
-
-.env{
-width:88vw;
-max-width:390px;
-height:260px;
-position:relative;
-cursor:pointer;
-}
-
-.envbody{
-position:absolute;
-left:0;
-right:0;
-bottom:0;
-top:35px;
-background:#faf6e9;
-border:1px solid #c7a45b;
-box-shadow:0 15px 40px #35403425;
-}
-
-.flap{
-position:absolute;
-left:0;
-right:0;
-top:35px;
-height:150px;
-background:#fffdf7;
-border:1px solid #c7a45b;
-clip-path:polygon(0 0,100% 0,50% 100%);
-transform-origin:top;
-transition:1s;
-z-index:2;
-}
-
-.env.open .flap{
-transform:rotateX(180deg);
-}
-
-.seal{
-position:absolute;
-z-index:3;
-top:105px;
-left:50%;
-transform:translateX(-50%);
-width:75px;
-height:75px;
-border-radius:50%;
-background:#b18b43;
-color:white;
-border:3px solid #e5cf98;
-display:grid;
-place-items:center;
-font-family:"Cormorant Garamond",serif;
-font-size:27px;
-box-shadow:0 5px 15px #35403430;
-transition:.4s;
-}
-
-.env.open .seal{
-opacity:0;
-}
-
-.tap{
-position:absolute;
-bottom:-8px;
-width:100%;
-font-size:15px;
-letter-spacing:4px;
-color:#687764;
-}
-
-/* ---------- MAIN ---------- */
-
-main{
-opacity:0;
-transition:1.2s;
-}
-
-main.show{
-opacity:1;
-}
-
-section{
-position:relative;
-padding:85px 20px;
-overflow:hidden;
+.page{
+  width:100%;
+  min-height:100vh;
+  overflow:hidden;
 }
 
 .hero{
-min-height:100vh;
-display:grid;
-place-items:center;
-padding:55px 20px;
-background:
-radial-gradient(circle at 5% 10%,#a9b7a040,transparent 25%),
-radial-gradient(circle at 95% 85%,#c7a45b25,transparent 28%),
-#fffdf8;
+  min-height:100vh;
+  padding:60px 20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:
+    linear-gradient(rgba(248,245,237,.88),rgba(248,245,237,.94)),
+    radial-gradient(circle at top left,#d8e3d8,transparent 35%),
+    radial-gradient(circle at bottom right,#e5d6a7,transparent 35%);
+  position:relative;
 }
 
-.mono{
-width:125px;
-height:125px;
-border:1px solid #c7a45b;
-border-radius:50%;
-display:grid;
-place-items:center;
-margin:auto;
-color:#c7a45b;
-font-family:"Great Vibes",cursive;
-font-size:58px;
-box-shadow:0 0 0 8px #fffdf8,0 0 0 9px #c7a45b55;
+.flower{
+  position:absolute;
+  font-size:45px;
+  opacity:.75;
+}
+
+.flower.one{
+  top:25px;
+  left:20px;
+}
+
+.flower.two{
+  top:35px;
+  right:20px;
+}
+
+.flower.three{
+  bottom:25px;
+  left:20px;
+}
+
+.flower.four{
+  bottom:30px;
+  right:20px;
+}
+
+.monogram{
+  width:115px;
+  height:115px;
+  border:2px solid #b89b55;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Great Vibes",cursive;
+  font-size:48px;
+  color:#b08b3e;
+  margin-bottom:25px;
+  box-shadow:0 0 0 7px rgba(184,155,85,.12);
 }
 
 .small{
-letter-spacing:4px;
-text-transform:uppercase;
-margin:32px 0 10px;
-font-size:15px;
-color:#687764;
-}
-
-.guest{
-font-family:"Great Vibes",cursive;
-font-size:46px;
-color:#687764;
-margin:10px 0 20px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:15px;
+  color:#7d8e82;
 }
 
 .names{
-font-family:"Great Vibes",cursive;
-font-size:clamp(58px,16vw,100px);
-color:#b18b43;
-line-height:1.05;
-text-shadow:0 2px 8px #c7a45b22;
+  font-family:"Great Vibes",cursive;
+  font-size:58px;
+  color:#40584a;
+  margin:10px 0;
 }
 
-.and{
-font-family:"Cormorant Garamond",serif;
-font-size:.5em;
-color:#687764;
+.amp{
+  color:#b89b55;
+  font-size:38px;
+  font-family:"Great Vibes",cursive;
 }
 
 .quote{
-font-size:23px;
-font-style:italic;
-max-width:650px;
-margin:28px auto;
-line-height:1.55;
+  max-width:600px;
+  margin:20px auto;
+  font-style:italic;
+  font-size:21px;
+  color:#68776e;
 }
 
-.date{
-font-size:25px;
-letter-spacing:4px;
-color:#687764;
-margin-top:25px;
+.gold-line{
+  width:100px;
+  height:2px;
+  background:#b89b55;
+  margin:25px auto;
 }
 
-/* ---------- HEADINGS ---------- */
+.section{
+  padding:65px 22px;
+  max-width:850px;
+  margin:auto;
+}
 
 .title{
-font-family:"Great Vibes",cursive;
-font-size:56px;
-color:#b18b43;
-line-height:1.2;
+  font-family:"Great Vibes",cursive;
+  font-size:45px;
+  color:#40584a;
+  margin-bottom:20px;
 }
 
-.line{
-width:100px;
-height:1px;
-background:#c7a45b;
-margin:20px auto 30px;
+.info{
+  background:rgba(255,255,255,.65);
+  border:1px solid rgba(184,155,85,.45);
+  border-radius:25px;
+  padding:30px 20px;
+  margin:20px auto;
+  max-width:650px;
+  box-shadow:0 10px 30px rgba(52,72,61,.08);
 }
 
-.text{
-max-width:680px;
-margin:18px auto;
-font-size:21px;
-line-height:1.65;
+.info h3{
+  color:#b08b3e;
+  margin-bottom:5px;
+  font-size:20px;
 }
 
-.sage{
-background:#edf1e9;
+.info p{
+  font-size:20px;
 }
 
-/* ---------- CARDS ---------- */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-gap:22px;
-max-width:900px;
-margin:40px auto;
+.dress{
+  font-size:23px;
+  margin-top:15px;
 }
 
-.card{
-position:relative;
-background:#fffdf8;
-border:1px solid #c7a45b66;
-padding:30px 20px;
-box-shadow:0 10px 25px #35403412;
+.notice{
+  margin:30px auto;
+  padding:20px;
+  border-top:1px solid #b89b55;
+  border-bottom:1px solid #b89b55;
+  max-width:600px;
+  font-size:21px;
+  color:#4d6255;
 }
 
-.card h3{
-font-size:17px;
-letter-spacing:3px;
-color:#687764;
-margin:5px;
+.verse{
+  font-style:italic;
+  font-size:22px;
+  max-width:650px;
+  margin:auto;
 }
 
-.card p{
-font-size:20px;
-line-height:1.55;
-margin:12px 0;
+.gifts{
+  font-size:20px;
+  max-width:650px;
+  margin:auto;
 }
 
-/* ---------- DRESS CODE ---------- */
-
-.black{
-font-size:34px;
-color:#354034;
-font-weight:600;
+form{
+  max-width:600px;
+  margin:30px auto 0;
+  text-align:left;
 }
 
-.black span{
-font-size:40px;
+label{
+  display:block;
+  margin:15px 0 6px;
+  font-size:18px;
 }
 
-/* ---------- RSVP ---------- */
-
-.rsvp{
-max-width:600px;
-margin:auto;
-background:#fffdf8;
-border:1px solid #c7a45b66;
-padding:35px 22px;
-box-shadow:0 10px 30px #35403412;
+input,select,textarea{
+  width:100%;
+  padding:14px;
+  border:1px solid #b7c5b9;
+  border-radius:12px;
+  background:#fffdf8;
+  font-family:inherit;
+  font-size:17px;
+  color:#34483d;
 }
 
-.rsvp input,
-.rsvp select,
-.rsvp textarea{
-width:100%;
-padding:14px;
-margin:7px 0 13px;
-border:1px solid #c8d0c1;
-background:#fffdf8;
-font:18px "Cormorant Garamond",serif;
-color:#354034;
+textarea{
+  min-height:120px;
+  resize:vertical;
 }
 
-.rsvp button{
-padding:15px 38px;
-border:0;
-background:#687764;
-color:white;
-font:20px "Cormorant Garamond",serif;
-cursor:pointer;
-letter-spacing:1px;
+button{
+  width:100%;
+  margin-top:20px;
+  padding:15px;
+  border:0;
+  border-radius:30px;
+  background:#40584a;
+  color:white;
+  font-family:"Cormorant Garamond",serif;
+  font-size:20px;
+  cursor:pointer;
+  transition:.3s;
 }
 
-.msg{
-margin-top:18px;
-font-size:19px;
+button:hover{
+  background:#b08b3e;
 }
 
-/* ---------- FOOTER ---------- */
-
-footer{
-position:relative;
-background:#354034;
-color:white;
-padding:50px 20px;
-overflow:hidden;
+#msg{
+  text-align:center;
+  margin-top:15px;
+  color:#40584a;
+  font-size:18px;
 }
 
-footer div{
-font-family:"Great Vibes",cursive;
-font-size:50px;
-color:#e0c98f;
+.footer{
+  padding:50px 20px;
+  background:#40584a;
+  color:#f8f5ed;
 }
 
-footer p{
-font-size:18px;
+.footer .names{
+  color:#f8f5ed;
+  font-size:45px;
 }
-
-/* ---------- MOBILE ---------- */
 
 @media(max-width:600px){
-
-section{
-padding:70px 18px;
-}
-
-.title{
-font-size:48px;
-}
-
-.guest{
-font-size:40px;
-}
-
-.quote{
-font-size:20px;
-}
-
-.names{
-font-size:62px;
-}
-
-.date{
-font-size:20px;
-letter-spacing:3px;
-}
-
-.flower{
-font-size:32px;
-}
-
-}
-
-/* ---------- PRINT ---------- */
-
-@media print{
-#cover{display:none}
-main{opacity:1}
-}
-</style>
-</head>
-
-<body>
-
-<!-- ENVELOPE OPENING -->
-
-<div id="cover" onclick="openInvitation()">
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-
-<div class="env" id="env">
-
-<div class="envbody"></div>
-<div class="flap"></div>
-
-<div class="seal">
-P ♡ N
-</div>
-
-<div class="tap">
-TAP TO OPEN
-</div>
-
-</div>
-</div>
-
-<main id="main">
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-<div class="flower bottom-left">🌸</div>
-<div class="flower bottom-right">🌿</div>
-
-<div>
-
-<div class="mono">
-P N
-</div>
-
-<div class="decor">✿ ❦ ✿</div>
-
-<div class="small">
-A special invitation for
-</div>
-
-<div class="guest" id="guest">
-Our Dear Guest
-</div>
-
-<div class="quote">
-“I have found the one whom my soul loves”
-</div>
-
-<div class="names">
-Pabalo <span class="and">&</span> Nokuzola
-</div>
-
-<div class="date">
-18 · OCTOBER · 2026
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WELCOME -->
-
-<section>
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-
-<div class="title">
-With Joyful Hearts
-</div>
-
-<div class="line"></div>
-
-<div class="decor">
-✿ ❦ ✿
-</div>
-
-<p class="text">
-We joyfully invite you to witness and celebrate the beginning of our journey together as husband and wife.
-</p>
-
-<p class="text">
-<strong>Strictly by invitation only.</strong>
-</p>
-
-</section>
-
-
-<!-- CELEBRATION -->
-
-<section class="sage">
-
-<div class="flower top-left">🌸</div>
-<div class="flower top-right">🌿</div>
-
-<div class="title">
-The Celebration
-</div>
-
-<div class="line"></div>
-
-<div class="decor">
-✿ ❦ ✿
-</div>
-
-<div class="cards">
-
-<div class="card">
-<h3>DATE</h3>
-<p>
-Sunday<br>
-18 October 2026
-</p>
-</div>
-
-<div class="card">
-<h3>VENUE</h3>
-<p>
-Grayson Manor<br>
-71 Burnside Rd<br>
-Bulawayo
-</p>
-</div>
-
-<div class="card">
-<h3>TIME</h3>
-<p>
-<strong>Ceremony — 10:00</strong><br>
-Guests seated by — 09:30
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DRESS CODE -->
-
-<section>
-
-<div class="flower top-right">🌸</div>
-
-<div class="title">
-The Dress Code
-</div>
-
-<div class="line"></div>
-
-<div class="black">
-<span>🖤</span> Black-Tie
-</div>
-
-<p class="text">
-Guests are kindly requested to wear <strong>black</strong> as we celebrate this elegant occasion together.
-</p>
-
-</section>
-
-
-<!-- LOVE -->
-
-<section class="sage">
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-
-<div class="title">
-A Celebration of Love
-</div>
-
-<div class="line"></div>
-
-<div class="quote">
-“And above all these put on love, which binds everything together in perfect harmony.”
-</div>
-
-<p class="text">
-Colossians 3:14
-</p>
-
-</section>
-
-
-<!-- GIFTS -->
-
-<section>
-
-<div class="flower top-left">🌸</div>
-
-<div class="title">
-A Little Note
-</div>
-
-<div class="line"></div>
-
-<p class="text">
-Your presence is the greatest gift we could ask for.
-</p>
-
-<p class="text">
-If you would like to bless us further, we would gratefully appreciate a monetary gift towards our new chapter together.
-</p>
-
-</section>
-
-
-<!-- RSVP -->
-
-<section class="sage" id="rsvp">
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-
-<div class="title">
-Kindly RSVP
-</div>
-
-<div class="line"></div>
-
-<div class="rsvp">
-
-<p class="text">
-We would be delighted to know whether you will be joining us.
-</p>
-
-<form id="form">
-
-<input
-id="name"
-placeholder="Your name"
-required
->
-
-<select id="reply" required>
-
-<option value="">
-Please select
-</option>
-
-<option>
-Happily accepts
-</option>
-
-<option>
-Regretfully declines
-</option>
-
-</select>
-
-<textarea
-id="note"
-rows="3"
-placeholder="Message (optional)"
-></textarea>
-
-<button type="submit">
-Send RSVP
-</button>
-
-</form>
-
-<div class="msg" id="msg"></div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<div>
-Pabalo & Nokuzola
-</div>
-
-<p>
-18 October 2026 · Bulawayo
-</p>
-
-<div class="decor">
-✿ ❦ ✿
-</div>
-
-</footer>
-
-</main>
-
-
-<script>
-
-/* PERSONALISED GUEST */
-
-const params = new URLSearchParams(window.location.search);
-const guest = params.get("guest");
-
-if(guest){
-
-const guestName = decodeURIComponent(guest);
-
-document.getElementById("guest").textContent = guestName;
-
-document.getElementById("name").value = guestName;
-
-}
-
-
-/* ENVELOPE */
-
-document.getElementById("env").onclick = function(){
-
-document.getElementById("env").classList.add("open");
-
-setTimeout(function(){
-
-document.getElementById("cover").classList.add("hide");
-
-document.getElementById("main").classList.add("show");
-
-},850);
-
-};
-
-
-/* RSVP */
-
-document.getElementById("form").onsubmit = function(e){
-
-e.preventDefault();
-
-const name =
-document.getElementById("name").value;
-
-const reply =
-document.getElementById("reply").value;
-
-const note =
-document.getElementById("note").value;
-
-document.getElementById("msg").textContent =
-"Thank you, " + name +
-". Opening your email app to send the RSVP…";
-
-location.href =
-"mailto:pabalonokuzola@gmail.com?subject=" +
-encodeURIComponent("Wedding RSVP - " + name) +
-"&body=" +
-encodeURIComponent(
-"Pabalo & Nokuzola Wedding RSVP\n\n" +
-"Guest: " + name + "\n" +
-"Response: " + reply + "\n" +
-"Message: " + note
-);
-
-};
-
-</script>
-
-</body>
-</html><!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Pabalo & Nokuzola</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
-
-<style>
-*{box-sizing:border-box}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-margin:0;
-background:#fffdf8;
-color:#354034;
-font-family:"Cormorant Garamond",serif;
-text-align:center;
-overflow-x:hidden;
-}
-
-/* ---------- FLORAL DECORATIONS ---------- */
-
-.flower{
-position:absolute;
-font-size:42px;
-opacity:.8;
-pointer-events:none;
-}
-
-.flower.top-left{
-top:15px;
-left:12px;
-transform:rotate(-20deg);
-}
-
-.flower.top-right{
-top:15px;
-right:12px;
-transform:rotate(20deg);
-}
-
-.flower.bottom-left{
-bottom:10px;
-left:15px;
-transform:rotate(20deg);
-}
-
-.flower.bottom-right{
-bottom:10px;
-right:15px;
-transform:rotate(-20deg);
-}
-
-.flower.small{
-font-size:28px;
-}
-
-.decor{
-font-size:28px;
-letter-spacing:8px;
-color:#c7a45b;
-margin:12px 0;
-}
-
-/* ---------- ENVELOPE ---------- */
-
-#cover{
-position:fixed;
-inset:0;
-z-index:10;
-background:
-radial-gradient(circle at 20% 20%,#dfe7dc 0,transparent 28%),
-radial-gradient(circle at 80% 80%,#ead9aa 0,transparent 25%),
-#fffdf8;
-display:grid;
-place-items:center;
-transition:1s;
-}
-
-#cover.hide{
-opacity:0;
-pointer-events:none;
-}
-
-.env{
-width:88vw;
-max-width:390px;
-height:260px;
-position:relative;
-cursor:pointer;
-}
-
-.envbody{
-position:absolute;
-left:0;
-right:0;
-bottom:0;
-top:35px;
-background:#faf6e9;
-border:1px solid #c7a45b;
-box-shadow:0 15px 40px #35403425;
-}
-
-.flap{
-position:absolute;
-left:0;
-right:0;
-top:35px;
-height:150px;
-background:#fffdf7;
-border:1px solid #c7a45b;
-clip-path:polygon(0 0,100% 0,50% 100%);
-transform-origin:top;
-transition:1s;
-z-index:2;
-}
-
-.env.open .flap{
-transform:rotateX(180deg);
-}
-
-.seal{
-position:absolute;
-z-index:3;
-top:105px;
-left:50%;
-transform:translateX(-50%);
-width:75px;
-height:75px;
-border-radius:50%;
-background:#b18b43;
-color:white;
-border:3px solid #e5cf98;
-display:grid;
-place-items:center;
-font-family:"Cormorant Garamond",serif;
-font-size:27px;
-box-shadow:0 5px 15px #35403430;
-transition:.4s;
-}
-
-.env.open .seal{
-opacity:0;
-}
-
-.tap{
-position:absolute;
-bottom:-8px;
-width:100%;
-font-size:15px;
-letter-spacing:4px;
-color:#687764;
-}
-
-/* ---------- MAIN ---------- */
-
-main{
-opacity:0;
-transition:1.2s;
-}
-
-main.show{
-opacity:1;
-}
-
-section{
-position:relative;
-padding:85px 20px;
-overflow:hidden;
-}
-
-.hero{
-min-height:100vh;
-display:grid;
-place-items:center;
-padding:55px 20px;
-background:
-radial-gradient(circle at 5% 10%,#a9b7a040,transparent 25%),
-radial-gradient(circle at 95% 85%,#c7a45b25,transparent 28%),
-#fffdf8;
-}
-
-.mono{
-width:125px;
-height:125px;
-border:1px solid #c7a45b;
-border-radius:50%;
-display:grid;
-place-items:center;
-margin:auto;
-color:#c7a45b;
-font-family:"Great Vibes",cursive;
-font-size:58px;
-box-shadow:0 0 0 8px #fffdf8,0 0 0 9px #c7a45b55;
-}
-
-.small{
-letter-spacing:4px;
-text-transform:uppercase;
-margin:32px 0 10px;
-font-size:15px;
-color:#687764;
-}
-
-.guest{
-font-family:"Great Vibes",cursive;
-font-size:46px;
-color:#687764;
-margin:10px 0 20px;
-}
-
-.names{
-font-family:"Great Vibes",cursive;
-font-size:clamp(58px,16vw,100px);
-color:#b18b43;
-line-height:1.05;
-text-shadow:0 2px 8px #c7a45b22;
-}
-
-.and{
-font-family:"Cormorant Garamond",serif;
-font-size:.5em;
-color:#687764;
-}
-
-.quote{
-font-size:23px;
-font-style:italic;
-max-width:650px;
-margin:28px auto;
-line-height:1.55;
-}
-
-.date{
-font-size:25px;
-letter-spacing:4px;
-color:#687764;
-margin-top:25px;
-}
-
-/* ---------- HEADINGS ---------- */
-
-.title{
-font-family:"Great Vibes",cursive;
-font-size:56px;
-color:#b18b43;
-line-height:1.2;
-}
-
-.line{
-width:100px;
-height:1px;
-background:#c7a45b;
-margin:20px auto 30px;
-}
-
-.text{
-max-width:680px;
-margin:18px auto;
-font-size:21px;
-line-height:1.65;
-}
-
-.sage{
-background:#edf1e9;
-}
-
-/* ---------- CARDS ---------- */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-gap:22px;
-max-width:900px;
-margin:40px auto;
-}
-
-.card{
-position:relative;
-background:#fffdf8;
-border:1px solid #c7a45b66;
-padding:30px 20px;
-box-shadow:0 10px 25px #35403412;
-}
-
-.card h3{
-font-size:17px;
-letter-spacing:3px;
-color:#687764;
-margin:5px;
-}
-
-.card p{
-font-size:20px;
-line-height:1.55;
-margin:12px 0;
-}
-
-/* ---------- DRESS CODE ---------- */
-
-.black{
-font-size:34px;
-color:#354034;
-font-weight:600;
-}
-
-.black span{
-font-size:40px;
-}
-
-/* ---------- RSVP ---------- */
-
-.rsvp{
-max-width:600px;
-margin:auto;
-background:#fffdf8;
-border:1px solid #c7a45b66;
-padding:35px 22px;
-box-shadow:0 10px 30px #35403412;
-}
-
-.rsvp input,
-.rsvp select,
-.rsvp textarea{
-width:100%;
-padding:14px;
-margin:7px 0 13px;
-border:1px solid #c8d0c1;
-background:#fffdf8;
-font:18px "Cormorant Garamond",serif;
-color:#354034;
-}
-
-.rsvp button{
-padding:15px 38px;
-border:0;
-background:#687764;
-color:white;
-font:20px "Cormorant Garamond",serif;
-cursor:pointer;
-letter-spacing:1px;
-}
-
-.msg{
-margin-top:18px;
-font-size:19px;
-}
-
-/* ---------- FOOTER ---------- */
-
-footer{
-position:relative;
-background:#354034;
-color:white;
-padding:50px 20px;
-overflow:hidden;
-}
-
-footer div{
-font-family:"Great Vibes",cursive;
-font-size:50px;
-color:#e0c98f;
-}
-
-footer p{
-font-size:18px;
-}
-
-/* ---------- MOBILE ---------- */
-
-@media(max-width:600px){
-
-section{
-padding:70px 18px;
-}
-
-.title{
-font-size:48px;
-}
-
-.guest{
-font-size:40px;
-}
-
-.quote{
-font-size:20px;
-}
-
-.names{
-font-size:62px;
-}
-
-.date{
-font-size:20px;
-letter-spacing:3px;
-}
-
-.flower{
-font-size:32px;
-}
-
-}
-
-/* ---------- PRINT ---------- */
-
-@media print{
-#cover{display:none}
-main{opacity:1}
-}
-</style>
-</head>
-
-<body>
-
-<!-- ENVELOPE OPENING -->
-
-<div id="cover">
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-
-<div class="env" id="env">
-
-<div class="envbody"></div>
-<div class="flap"></div>
-
-<div class="seal">
-P ♡ N
-</div>
-
-<div class="tap">
-TAP TO OPEN
-</div>
-
-</div>
-</div>
-
-<main id="main">
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-<div class="flower bottom-left">🌸</div>
-<div class="flower bottom-right">🌿</div>
-
-<div>
-
-<div class="mono">
-P N
-</div>
-
-<div class="decor">✿ ❦ ✿</div>
-
-<div class="small">
-A special invitation for
-</div>
-
-<div class="guest" id="guest">
-Our Dear Guest
-</div>
-
-<div class="quote">
-“I have found the one whom my soul loves”
-</div>
-
-<div class="names">
-Pabalo <span class="and">&</span> Nokuzola
-</div>
-
-<div class="date">
-18 · OCTOBER · 2026
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WELCOME -->
-
-<section>
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-
-<div class="title">
-With Joyful Hearts
-</div>
-
-<div class="line"></div>
-
-<div class="decor">
-✿ ❦ ✿
-</div>
-
-<p class="text">
-We joyfully invite you to witness and celebrate the beginning of our journey together as husband and wife.
-</p>
-
-<p class="text">
-<strong>Strictly by invitation only.</strong>
-</p>
-
-</section>
-
-
-<!-- CELEBRATION -->
-
-<section class="sage">
-
-<div class="flower top-left">🌸</div>
-<div class="flower top-right">🌿</div>
-
-<div class="title">
-The Celebration
-</div>
-
-<div class="line"></div>
-
-<div class="decor">
-✿ ❦ ✿
-</div>
-
-<div class="cards">
-
-<div class="card">
-<h3>DATE</h3>
-<p>
-Sunday<br>
-18 October 2026
-</p>
-</div>
-
-<div class="card">
-<h3>VENUE</h3>
-<p>
-Grayson Manor<br>
-71 Burnside Rd<br>
-Bulawayo
-</p>
-</div>
-
-<div class="card">
-<h3>TIME</h3>
-<p>
-<strong>Ceremony — 10:00</strong><br>
-Guests seated by — 09:30
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DRESS CODE -->
-
-<section>
-
-<div class="flower top-right">🌸</div>
-
-<div class="title">
-The Dress Code
-</div>
-
-<div class="line"></div>
-
-<div class="black">
-<span>🖤</span> Black-Tie
-</div>
-
-<p class="text">
-Guests are kindly requested to wear <strong>black</strong> as we celebrate this elegant occasion together.
-</p>
-
-</section>
-
-
-<!-- LOVE -->
-
-<section class="sage">
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-
-<div class="title">
-A Celebration of Love
-</div>
-
-<div class="line"></div>
-
-<div class="quote">
-“And above all these put on love, which binds everything together in perfect harmony.”
-</div>
-
-<p class="text">
-Colossians 3:14
-</p>
-
-</section>
-
-
-<!-- GIFTS -->
-
-<section>
-
-<div class="flower top-left">🌸</div>
-
-<div class="title">
-A Little Note
-</div>
-
-<div class="line"></div>
-
-<p class="text">
-Your presence is the greatest gift we could ask for.
-</p>
-
-<p class="text">
-If you would like to bless us further, we would gratefully appreciate a monetary gift towards our new chapter together.
-</p>
-
-</section>
-
-
-<!-- RSVP -->
-
-<section class="sage" id="rsvp">
-
-<div class="flower top-left">🌿</div>
-<div class="flower top-right">🌸</div>
-
-<div class="title">
-Kindly RSVP
-</div>
-
-<div class="line"></div>
-
-<div class="rsvp">
-
-<p class="text">
-We would be delighted to know whether you will be joining us.
-</p>
-
-<form id="form">
-
-<input
-id="name"
-placeholder="Your name"
-required
->
-
-<select id="reply" required>
-
-<option value="">
-Please select
-</option>
-
-<option>
-Happily accepts
-</option>
-
-<option>
-Regretfully declines
-</option>
-
-</select>
-
-<textarea
-id="note"
-rows="3"
-placeholder="Message (optional)"
-></textarea>
-
-<button type="submit">
-Send RSVP
-</button>
-
-</form>
-
-<div class="msg" id="msg"></div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<div>
-Pabalo & Nokuzola
-</div>
-
-<p>
-18 October 2026 · Bulawayo
-</p>
-
-<div class="decor">
-✿ ❦ ✿
-</div>
-
-</footer>
-
-</main>
-
-
-
-<script>
-window.addEventListener("load", function () {
-
-    const envelope = document.getElementById("env");
-    const cover = document.getElementById("cover");
-    const main = document.getElementById("main");
-
-    envelope.onclick = function () {
-
-        envelope.classList.add("open");
-
-        setTimeout(function () {
-            cover.classList.add("hide");
-            main.classList.add("show");
-        }, 1000);
-
-    };
-
-
-    /* PERSONALised GUEST */
-
-    const params = new URLSearchParams(window.location.search);
-    const guest = params.get("guest");
-
-    if (guest) {
-        const guestName = guest;
-
-        document.getElementById("guest").textContent = guestName;
-        document.getElementById("name").value = guestName;
-    }
-
-
-    /* RSVP */
-
-    document.getElementById("form").onsubmit = function (e) {
-
-        e.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const reply = document.getElementById("reply").value;
-        const note = document.getElementById("note").value;
-
-        document.getElementById("msg").textContent =
-            "Thank you, " + name +
-            ". Opening your email app to send the RSVP…";
-
-        window.location.href =
-            "mailto:pabalonokuzola@gmail.com?subject=" +
-            encodeURIComponent("Wedding RSVP - " + name) +
-            "&body=" +
-            encodeURIComponent(
-                "Pabalo & Nokuzola Wedding RSVP\n\n" +
-                "Guest: " + name + "\n" +
-                "Response: " + reply + "\n" +
-                "Message: " + note
-            );
-    };
-function openInvitation(){
-    document.getElementById("cover").classList.add("hide");
-    document.getElementById("main").classList.add("show");
-}
-});
-</script>
-</body>
-</html>
+  .names{
+    font-size:48
