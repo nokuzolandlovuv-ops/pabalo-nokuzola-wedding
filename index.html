@@ -1506,73 +1506,66 @@ Pabalo & Nokuzola
 </main>
 
 
+
 <script>
+window.addEventListener("load", function () {
 
-/* PERSONALISED GUEST */
+    const envelope = document.getElementById("env");
+    const cover = document.getElementById("cover");
+    const main = document.getElementById("main");
 
-const params = new URLSearchParams(window.location.search);
-const guest = params.get("guest");
+    envelope.onclick = function () {
 
-if(guest){
+        envelope.classList.add("open");
 
-const guestName = decodeURIComponent(guest);
+        setTimeout(function () {
+            cover.classList.add("hide");
+            main.classList.add("show");
+        }, 1000);
 
-document.getElementById("guest").textContent = guestName;
-
-document.getElementById("name").value = guestName;
-
-}
+    };
 
 
-/* ENVELOPE */
+    /* PERSONALised GUEST */
 
-document.getElementById("env").addEventListener("click", function(){
+    const params = new URLSearchParams(window.location.search);
+    const guest = params.get("guest");
 
-    this.classList.add("open");
+    if (guest) {
+        const guestName = guest;
 
-    setTimeout(function(){
+        document.getElementById("guest").textContent = guestName;
+        document.getElementById("name").value = guestName;
+    }
 
-        document.getElementById("cover").classList.add("hide");
-        document.getElementById("main").classList.add("show");
 
-    }, 1000);
+    /* RSVP */
+
+    document.getElementById("form").onsubmit = function (e) {
+
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const reply = document.getElementById("reply").value;
+        const note = document.getElementById("note").value;
+
+        document.getElementById("msg").textContent =
+            "Thank you, " + name +
+            ". Opening your email app to send the RSVP…";
+
+        window.location.href =
+            "mailto:pabalonokuzola@gmail.com?subject=" +
+            encodeURIComponent("Wedding RSVP - " + name) +
+            "&body=" +
+            encodeURIComponent(
+                "Pabalo & Nokuzola Wedding RSVP\n\n" +
+                "Guest: " + name + "\n" +
+                "Response: " + reply + "\n" +
+                "Message: " + note
+            );
+    };
 
 });
-
-
-/* RSVP */
-
-document.getElementById("form").onsubmit = function(e){
-
-e.preventDefault();
-
-const name =
-document.getElementById("name").value;
-
-const reply =
-document.getElementById("reply").value;
-
-const note =
-document.getElementById("note").value;
-
-document.getElementById("msg").textContent =
-"Thank you, " + name +
-". Opening your email app to send the RSVP…";
-
-location.href =
-"mailto:pabalonokuzola@gmail.com?subject=" +
-encodeURIComponent("Wedding RSVP - " + name) +
-"&body=" +
-encodeURIComponent(
-"Pabalo & Nokuzola Wedding RSVP\n\n" +
-"Guest: " + name + "\n" +
-"Response: " + reply + "\n" +
-"Message: " + note
-);
-
-};
-
 </script>
-
 </body>
 </html>
