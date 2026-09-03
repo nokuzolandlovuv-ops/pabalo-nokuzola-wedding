@@ -3,249 +3,317 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Pabalo & Nokuzola | Wedding Invitation</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<title>Pabalo & Nokuzola</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box}
 
 body{
-  background:#f8f5ed;
-  color:#34483d;
-  font-family:"Cormorant Garamond",serif;
-  text-align:center;
-  line-height:1.6;
-}
-
-.page{
-  width:100%;
-  min-height:100vh;
-  overflow:hidden;
+margin:0;
+background:#f8f5ed;
+color:#3f5549;
+font-family:Georgia,serif;
+text-align:center;
 }
 
 .hero{
-  min-height:100vh;
-  padding:60px 20px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:
-    linear-gradient(rgba(248,245,237,.88),rgba(248,245,237,.94)),
-    radial-gradient(circle at top left,#d8e3d8,transparent 35%),
-    radial-gradient(circle at bottom right,#e5d6a7,transparent 35%);
-  position:relative;
+min-height:100vh;
+padding:60px 20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#f8f5ed,#e5eee6,#f8f5ed);
 }
 
-.flower{
-  position:absolute;
-  font-size:45px;
-  opacity:.75;
-}
-
-.flower.one{
-  top:25px;
-  left:20px;
-}
-
-.flower.two{
-  top:35px;
-  right:20px;
-}
-
-.flower.three{
-  bottom:25px;
-  left:20px;
-}
-
-.flower.four{
-  bottom:30px;
-  right:20px;
+.flowers{
+font-size:38px;
+margin-bottom:20px;
 }
 
 .monogram{
-  width:115px;
-  height:115px;
-  border:2px solid #b89b55;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:"Great Vibes",cursive;
-  font-size:48px;
-  color:#b08b3e;
-  margin-bottom:25px;
-  box-shadow:0 0 0 7px rgba(184,155,85,.12);
+width:110px;
+height:110px;
+border:2px solid #b49755;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:cursive;
+font-size:42px;
+color:#b49755;
+margin-bottom:25px;
 }
 
 .small{
-  letter-spacing:4px;
-  text-transform:uppercase;
-  font-size:15px;
-  color:#7d8e82;
+letter-spacing:3px;
+text-transform:uppercase;
+font-size:13px;
 }
 
 .names{
-  font-family:"Great Vibes",cursive;
-  font-size:58px;
-  color:#40584a;
-  margin:10px 0;
+font-family:cursive;
+font-size:52px;
+color:#3f5549;
+margin:12px 0;
 }
 
 .amp{
-  color:#b89b55;
-  font-size:38px;
-  font-family:"Great Vibes",cursive;
+color:#b49755;
 }
 
 .quote{
-  max-width:600px;
-  margin:20px auto;
-  font-style:italic;
-  font-size:21px;
-  color:#68776e;
+font-style:italic;
+font-size:20px;
+max-width:600px;
+margin:20px auto;
 }
 
-.gold-line{
-  width:100px;
-  height:2px;
-  background:#b89b55;
-  margin:25px auto;
+.line{
+width:90px;
+height:2px;
+background:#b49755;
+margin:25px auto;
 }
 
-.section{
-  padding:65px 22px;
-  max-width:850px;
-  margin:auto;
+section{
+padding:60px 20px;
+max-width:750px;
+margin:auto;
 }
 
 .title{
-  font-family:"Great Vibes",cursive;
-  font-size:45px;
-  color:#40584a;
-  margin-bottom:20px;
+font-family:cursive;
+font-size:42px;
+color:#3f5549;
+margin-bottom:20px;
 }
 
-.info{
-  background:rgba(255,255,255,.65);
-  border:1px solid rgba(184,155,85,.45);
-  border-radius:25px;
-  padding:30px 20px;
-  margin:20px auto;
-  max-width:650px;
-  box-shadow:0 10px 30px rgba(52,72,61,.08);
+.card{
+background:white;
+padding:30px 20px;
+border-radius:20px;
+border:1px solid #c5b27b;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
-.info h3{
-  color:#b08b3e;
-  margin-bottom:5px;
-  font-size:20px;
+.card h3{
+color:#b49755;
+letter-spacing:2px;
 }
 
-.info p{
-  font-size:20px;
-}
-
-.dress{
-  font-size:23px;
-  margin-top:15px;
+.card p{
+font-size:19px;
 }
 
 .notice{
-  margin:30px auto;
-  padding:20px;
-  border-top:1px solid #b89b55;
-  border-bottom:1px solid #b89b55;
-  max-width:600px;
-  font-size:21px;
-  color:#4d6255;
-}
-
-.verse{
-  font-style:italic;
-  font-size:22px;
-  max-width:650px;
-  margin:auto;
-}
-
-.gifts{
-  font-size:20px;
-  max-width:650px;
-  margin:auto;
-}
-
-form{
-  max-width:600px;
-  margin:30px auto 0;
-  text-align:left;
-}
-
-label{
-  display:block;
-  margin:15px 0 6px;
-  font-size:18px;
+margin:25px auto;
+padding:18px;
+border-top:1px solid #b49755;
+border-bottom:1px solid #b49755;
+font-size:21px;
 }
 
 input,select,textarea{
-  width:100%;
-  padding:14px;
-  border:1px solid #b7c5b9;
-  border-radius:12px;
-  background:#fffdf8;
-  font-family:inherit;
-  font-size:17px;
-  color:#34483d;
-}
-
-textarea{
-  min-height:120px;
-  resize:vertical;
+width:100%;
+padding:14px;
+margin:8px 0 18px;
+border:1px solid #b8c6bb;
+border-radius:10px;
+font-size:16px;
+font-family:Georgia,serif;
 }
 
 button{
-  width:100%;
-  margin-top:20px;
-  padding:15px;
-  border:0;
-  border-radius:30px;
-  background:#40584a;
-  color:white;
-  font-family:"Cormorant Garamond",serif;
-  font-size:20px;
-  cursor:pointer;
-  transition:.3s;
+width:100%;
+padding:15px;
+border:0;
+border-radius:30px;
+background:#3f5549;
+color:white;
+font-size:18px;
+cursor:pointer;
 }
 
-button:hover{
-  background:#b08b3e;
+#message{
+margin-top:15px;
+font-size:17px;
 }
 
-#msg{
-  text-align:center;
-  margin-top:15px;
-  color:#40584a;
-  font-size:18px;
+footer{
+padding:45px 20px;
+background:#3f5549;
+color:white;
 }
 
-.footer{
-  padding:50px 20px;
-  background:#40584a;
-  color:#f8f5ed;
-}
-
-.footer .names{
-  color:#f8f5ed;
-  font-size:45px;
+footer .names{
+color:white;
+font-size:40px;
 }
 
 @media(max-width:600px){
-  .names{
-    font-size:48
+.names{font-size:45px}
+.title{font-size:38px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+<div class="flowers">🌿 🌸 🌿</div>
+
+<div class="monogram">P ♡ N</div>
+
+<div class="small">Together with their families</div>
+
+<div class="names">
+Pabalo <span class="amp">&</span> Nokuzola
+</div>
+
+<div class="line"></div>
+
+<div class="quote">
+“I have found the one whom my soul loves”
+</div>
+
+<div class="small">Request the pleasure of your company</div>
+
+</div>
+
+
+<section>
+
+<div class="title">Our Wedding Day</div>
+
+<div class="card">
+
+<h3>DATE</h3>
+<p>18 October 2026</p>
+
+<h3>VENUE</h3>
+<p>Grayson Manor</p>
+<p>71 Burnside Rd, Bulawayo</p>
+
+<h3>TIME</h3>
+<p>Guests seated by 09:30</p>
+<p>Ceremony begins at 10:00</p>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="title">Dress Code</div>
+
+<div class="card">
+
+<h3>BLACK-TIE</h3>
+
+<p>Guests are requested to wear black.</p>
+
+</div>
+
+<div class="notice">
+<strong>Strictly by Invitation</strong>
+</div>
+
+</section>
+
+
+<section>
+
+<div class="title">A Word of Love</div>
+
+<div class="quote">
+
+“And above all these put on love, which binds everything together in perfect harmony.”
+
+<br><br>
+
+<strong>Colossians 3:14</strong>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="title">Gifts</div>
+
+<div class="quote">
+
+Your presence at our wedding is the greatest gift of all.
+
+<br><br>
+
+Should you wish to bless us with a gift, a monetary contribution towards our new journey together would be deeply appreciated.
+
+<br><br>
+
+Thank you for celebrating this beautiful beginning with us. ❤️
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="title">RSVP</div>
+
+<div class="quote">
+Kindly let us know if you will be joining us.
+</div>
+
+<form id="rsvpForm">
+
+<label>Your Name</label>
+<input id="guestName" type="text" placeholder="Enter your name" required>
+
+<label>Will you be joining us?</label>
+
+<select id="attendance" required>
+<option value="">Please select</option>
+<option>Yes, I will attend</option>
+<option>Sorry, I cannot attend</option>
+</select>
+
+<label>Message</label>
+
+<textarea id="note" placeholder="Optional message"></textarea>
+
+<button type="submit">Send RSVP</button>
+
+<div id="message"></div>
+
+</form>
+
+</section>
+
+
+<footer>
+
+<div class="small">With love</div>
+
+<div class="names">
+Pabalo & Nokuzola
+</div>
+
+<p>18 • 10 • 2026</p>
+
+</footer>
+
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("guest");
+
+if(guest){
+document.getElementById("guestName").value =
+decodeURIComponent(guest
