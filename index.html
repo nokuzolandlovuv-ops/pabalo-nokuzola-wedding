@@ -1526,19 +1526,18 @@ document.getElementById("name").value = guestName;
 
 /* ENVELOPE */
 
-document.getElementById("env").onclick = function(){
+document.getElementById("env").addEventListener("click", function(){
 
-document.getElementById("env").classList.add("open");
+    this.classList.add("open");
 
-setTimeout(function(){
+    setTimeout(function(){
 
-document.getElementById("cover").classList.add("hide");
+        document.getElementById("cover").classList.add("hide");
+        document.getElementById("main").classList.add("show");
 
-document.getElementById("main").classList.add("show");
+    }, 1000);
 
-},850);
-
-};
+});
 
 
 /* RSVP */
