@@ -25,20 +25,23 @@ max-width:760px;
 margin:auto;
 background:#fffdf8;
 min-height:100vh;
-padding:30px 20px 60px;
+padding:35px 20px 60px;
 }
+
+/* TOP */
 
 .monogram{
 font-family:cursive;
 font-size:75px;
 color:#b49755;
-margin-top:20px;
+margin:10px 0 5px;
 }
 
-.small{
-letter-spacing:3px;
-font-size:13px;
-color:#7b8b76;
+.personal-greeting{
+font-family:cursive;
+font-size:31px;
+color:#b49755;
+margin:8px 0 28px;
 }
 
 h1{
@@ -46,14 +49,14 @@ font-family:cursive;
 font-size:55px;
 font-weight:normal;
 color:#b49755;
-margin:10px 0;
+margin:5px 0 8px;
 }
 
 .names{
 font-family:cursive;
-font-size:32px;
+font-size:25px;
 color:#52644f;
-margin:10px 0 25px;
+margin-bottom:25px;
 }
 
 .quote{
@@ -65,32 +68,21 @@ margin:25px auto;
 max-width:600px;
 }
 
-.personal-greeting{
-font-family:cursive;
-font-size:31px;
-color:#b49755;
-margin:22px 0 8px;
-}
-
-.invited{
-font-size:15px;
-letter-spacing:2px;
-color:#697762;
-}
-
 .flower{
 font-size:30px;
 color:#b49755;
-margin:20px 0;
+margin:18px 0;
 }
+
+/* SECTIONS */
 
 .card{
 background:#f2f5ec;
 border:1px solid #d8c58d;
 border-radius:18px;
 padding:28px 20px;
-margin:25px 0;
-box-shadow:0 8px 25px rgba(0,0,0,0.07);
+margin:22px 0;
+box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
 .card h2{
@@ -99,18 +91,57 @@ font-size:32px;
 font-weight:normal;
 color:#b49755;
 margin-top:0;
+margin-bottom:18px;
 }
 
 .date{
-font-size:23px;
+font-size:24px;
 color:#52644f;
 font-weight:bold;
+margin-bottom:20px;
 }
 
-.details{
-line-height:1.8;
-font-size:16px;
+/* INDIVIDUAL DETAILS */
+
+.detail{
+background:#fffdf8;
+border:1px solid #ded7c5;
+border-radius:14px;
+padding:17px 12px;
+margin:12px 0;
 }
+
+.detail-title{
+font-family:cursive;
+font-size:22px;
+color:#b49755;
+margin-bottom:6px;
+}
+
+.detail-text{
+font-size:15px;
+line-height:1.6;
+color:#52644f;
+}
+
+/* BUTTON */
+
+.button{
+display:inline-block;
+padding:14px 25px;
+margin-top:18px;
+background:#b49755;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-size:15px;
+}
+
+.button:hover{
+opacity:.9;
+}
+
+/* COUNTDOWN */
 
 .countdown{
 display:flex;
@@ -142,22 +173,14 @@ text-transform:uppercase;
 letter-spacing:1px;
 }
 
-.button{
-display:inline-block;
-padding:14px 25px;
-margin-top:15px;
-background:#b49755;
-color:white;
-text-decoration:none;
-border-radius:30px;
-font-size:15px;
-border:none;
-cursor:pointer;
+/* TEXT */
+
+.details{
+line-height:1.8;
+font-size:16px;
 }
 
-.button:hover{
-opacity:.9;
-}
+/* RSVP */
 
 form{
 display:flex;
@@ -207,11 +230,15 @@ color:#b49755;
 @media(max-width:500px){
 
 .page{
-padding:20px 15px 45px;
+padding:25px 15px 45px;
 }
 
 .monogram{
 font-size:62px;
+}
+
+.personal-greeting{
+font-size:27px;
 }
 
 h1{
@@ -219,15 +246,11 @@ font-size:43px;
 }
 
 .names{
-font-size:27px;
+font-size:23px;
 }
 
 .quote{
 font-size:21px;
-}
-
-.personal-greeting{
-font-size:27px;
 }
 
 }
@@ -239,21 +262,19 @@ font-size:27px;
 
 <div class="page">
 
-<div class="monogram">P & N</div>
+<!-- TOP -->
 
-<div class="small">
-TOGETHER WITH THEIR FAMILIES
+<div class="monogram">
+P & N
 </div>
 
 <div id="personalGreeting" class="personal-greeting">
 You are warmly invited
 </div>
 
-<div class="flower">
-✿ ❀ ✿
-</div>
-
-<h1>Pabalo & Nokuzola</h1>
+<h1>
+Pabalo & Nokuzola
+</h1>
 
 <div class="names">
 invite you to celebrate their wedding
@@ -264,37 +285,70 @@ invite you to celebrate their wedding
 </div>
 
 <div class="flower">
-❦
+✿ ❀ ✿
 </div>
+
+
+<!-- WEDDING DETAILS -->
 
 <div class="card">
 
-<h2>Our Special Day</h2>
+<h2>
+Our Special Day
+</h2>
 
 <div class="date">
 18 October 2026
 </div>
 
-<div class="details">
+<div class="detail">
 
-<p>
-📍 <strong>Grayson Manor</strong><br>
+<div class="detail-title">
+📍 Venue
+</div>
+
+<div class="detail-text">
+<strong>Grayson Manor</strong><br>
 71 Burnside Rd, Bulawayo
-</p>
+</div>
 
-<p>
+</div>
+
+<div class="detail">
+
+<div class="detail-title">
+🕘 Ceremony
+</div>
+
+<div class="detail-text">
 Guests seated by <strong>09:30</strong><br>
 Ceremony begins at <strong>10:00</strong>
-</p>
+</div>
 
-<p>
-🖤 <strong>Dress Code: Black-Tie</strong><br>
+</div>
+
+<div class="detail">
+
+<div class="detail-title">
+🖤 Dress Code
+</div>
+
+<div class="detail-text">
+<strong>Black-Tie</strong><br>
 Guests are requested to wear black.
-</p>
+</div>
 
-<p>
+</div>
+
+<div class="detail">
+
+<div class="detail-title">
+✨ Invitation
+</div>
+
+<div class="detail-text">
 <strong>Strictly by Invitation</strong>
-</p>
+</div>
 
 </div>
 
@@ -307,9 +361,14 @@ target="_blank">
 
 </div>
 
+
+<!-- COUNTDOWN -->
+
 <div class="card">
 
-<h2>Counting Down To Forever</h2>
+<h2>
+Counting Down To Forever
+</h2>
 
 <div id="countdown" class="countdown">
 
@@ -337,9 +396,14 @@ target="_blank">
 
 </div>
 
+
+<!-- BIBLE VERSE -->
+
 <div class="card">
 
-<h2>A Note From Us</h2>
+<h2>
+A Note From Us
+</h2>
 
 <p class="details">
 “Above all these put on love, which binds everything together in perfect harmony.”
@@ -351,9 +415,14 @@ target="_blank">
 
 </div>
 
+
+<!-- GIFT -->
+
 <div class="card">
 
-<h2>With Love</h2>
+<h2>
+With Love
+</h2>
 
 <p class="details">
 Your presence on our special day means so much to us.
@@ -363,9 +432,14 @@ towards our future together would be deeply appreciated.
 
 </div>
 
+
+<!-- RSVP -->
+
 <div class="card">
 
-<h2>RSVP</h2>
+<h2>
+RSVP
+</h2>
 
 <p>
 Kindly confirm your attendance below.
@@ -401,15 +475,21 @@ id="note"
 placeholder="A message for Pabalo & Nokuzola (optional)">
 </textarea>
 
-<button class="submit" type="submit">
+<button
+class="submit"
+type="submit">
 Send RSVP
 </button>
 
 </form>
 
-<div id="message" class="message"></div>
+<div
+id="message"
+class="message">
+</div>
 
 </div>
+
 
 <div class="flower">
 ✿ ❀ ✿
@@ -424,43 +504,51 @@ With love, Pabalo & Nokuzola ❤️
 
 <script>
 
-/* ================================
-   PERSONAL GUEST NAME
-================================ */
+/* PERSONAL GUEST NAME */
 
-const params = new URLSearchParams(window.location.search);
-const guest = params.get("guest");
+const params =
+new URLSearchParams(window.location.search);
 
-const greeting = document.getElementById("personalGreeting");
-const guestNameInput = document.getElementById("guestName");
+const guest =
+params.get("guest");
 
-if (guest) {
+const greeting =
+document.getElementById("personalGreeting");
 
-const decodedGuest = decodeURIComponent(guest);
+const guestNameInput =
+document.getElementById("guestName");
 
-greeting.textContent = "Dear " + decodedGuest + ",";
+if(guest){
 
-guestNameInput.value = decodedGuest;
+const decodedGuest =
+decodeURIComponent(guest);
 
-} else {
+greeting.textContent =
+"Dear " + decodedGuest + ",";
 
-greeting.textContent = "You are warmly invited";
+guestNameInput.value =
+decodedGuest;
+
+}else{
+
+greeting.textContent =
+"You are warmly invited";
 
 }
 
 
-/* ================================
-   WEDDING COUNTDOWN
-================================ */
+/* COUNTDOWN */
 
 const weddingDate =
 new Date("October 18, 2026 10:00:00").getTime();
 
 function updateCountdown(){
 
-const now = new Date().getTime();
+const now =
+new Date().getTime();
 
-const distance = weddingDate - now;
+const distance =
+weddingDate - now;
 
 if(distance <= 0){
 
@@ -474,48 +562,64 @@ return;
 }
 
 const days =
-Math.floor(distance / (1000 * 60 * 60 * 24));
+Math.floor(
+distance /
+(1000 * 60 * 60 * 24)
+);
 
 const hours =
 Math.floor(
-(distance % (1000 * 60 * 60 * 24))
-/ (1000 * 60 * 60)
+(distance %
+(1000 * 60 * 60 * 24))
+/
+(1000 * 60 * 60)
 );
 
 const minutes =
 Math.floor(
-(distance % (1000 * 60 * 60))
-/ (1000 * 60)
+(distance %
+(1000 * 60 * 60))
+/
+(1000 * 60)
 );
 
 const seconds =
 Math.floor(
-(distance % (1000 * 60))
-/ 1000
+(distance %
+(1000 * 60))
+/
+1000
 );
 
-document.getElementById("days").textContent = days;
+document.getElementById("days").textContent =
+days;
 
-document.getElementById("hours").textContent = hours;
+document.getElementById("hours").textContent =
+hours;
 
-document.getElementById("minutes").textContent = minutes;
+document.getElementById("minutes").textContent =
+minutes;
 
-document.getElementById("seconds").textContent = seconds;
+document.getElementById("seconds").textContent =
+seconds;
 
 }
 
 updateCountdown();
 
-setInterval(updateCountdown,1000);
+setInterval(
+updateCountdown,
+1000
+);
 
 
-/* ================================
-   RSVP
-================================ */
+/* RSVP */
 
 document
 .getElementById("rsvpForm")
-.addEventListener("submit",function(e){
+.addEventListener(
+"submit",
+function(e){
 
 e.preventDefault();
 
@@ -537,8 +641,11 @@ const body =
 "Response: " + attendance + "\n" +
 "Message: " + note;
 
-document.getElementById("message").textContent =
-"Thank you, " + name + "! Opening your email app...";
+document.getElementById("message")
+.textContent =
+"Thank you, " +
+name +
+"! Opening your email app...";
 
 window.location.href =
 "mailto:pabalonokuzola@gmail.com" +
