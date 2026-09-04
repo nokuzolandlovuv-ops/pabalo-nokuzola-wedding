@@ -7,6 +7,7 @@
 <title>Pabalo & Nokuzola | Wedding Invitation</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap');
 
 *{
@@ -20,8 +21,8 @@ html{
 }
 
 body{
-    background:#e9e5d9;
-    color:#52604d;
+    background:#dfe6da;
+    color:#52644f;
     font-family:"Montserrat",sans-serif;
 }
 
@@ -32,6 +33,7 @@ body{
     min-height:100vh;
     overflow:hidden;
 }
+
 
 /* =========================
    OPENING
@@ -44,27 +46,40 @@ body{
     align-items:center;
     justify-content:center;
     padding:30px 18px;
+
     background:
-        radial-gradient(circle at 10% 15%,rgba(180,151,85,.12),transparent 25%),
-        radial-gradient(circle at 90% 85%,rgba(82,100,79,.12),transparent 25%),
-        #fffdf7;
+        radial-gradient(circle at 10% 15%,rgba(82,100,79,.16),transparent 25%),
+        radial-gradient(circle at 90% 85%,rgba(180,151,85,.12),transparent 25%),
+        #eef2e9;
 }
 
 .opening-card{
     width:100%;
     max-width:620px;
     min-height:85vh;
+
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     text-align:center;
     padding:45px 22px;
-    border:1px solid #d7c58e;
-    background:rgba(255,253,247,.96);
-    box-shadow:0 15px 40px rgba(60,70,55,.09);
+
+    border:1px solid #b49755;
+
+    background:rgba(255,253,247,.97);
+
+    box-shadow:
+        0 15px 40px rgba(60,70,55,.12);
+
     position:relative;
 }
+
+
+/* =========================
+   DECORATION
+========================= */
 
 .monogram{
     font-family:"Great Vibes",cursive;
@@ -81,21 +96,36 @@ body{
     margin:15px 0;
 }
 
+
+/* =========================
+   PERSONAL GUEST
+========================= */
+
 .guest-label{
     font-family:"Montserrat",sans-serif;
     text-transform:uppercase;
     letter-spacing:3px;
     font-size:11px;
-    color:#7a8473;
+    color:#71806c;
     margin-bottom:14px;
 }
 
+
+/*
+   Guest name deliberately uses
+   Times New Roman instead of cursive
+   so long names remain neat and readable.
+*/
+
 .personal-greeting{
-    font-family:"Great Vibes",cursive;
+    font-family:"Times New Roman",Times,serif;
     color:#b49755;
-    font-size:46px;
-    line-height:1.25;
-    margin-bottom:12px;
+    font-size:32px;
+    font-weight:normal;
+    line-height:1.3;
+    letter-spacing:1px;
+    margin-bottom:15px;
+    max-width:560px;
 }
 
 .invited-text{
@@ -118,19 +148,26 @@ body{
     margin-top:35px;
     padding:15px 34px;
     border-radius:40px;
-    background:#b49755;
+
+    background:#7b8d72;
+
     color:white;
     text-decoration:none;
     text-transform:uppercase;
     letter-spacing:2px;
     font-size:12px;
-    box-shadow:0 8px 20px rgba(180,151,85,.25);
+
+    box-shadow:
+        0 8px 20px rgba(82,100,79,.25);
+
     transition:.3s;
 }
 
 .open-button:hover{
     transform:translateY(-2px);
+    background:#687b61;
 }
+
 
 /* =========================
    INVITATION
@@ -140,10 +177,11 @@ body{
     min-height:100vh;
     padding:45px 18px 70px;
     text-align:center;
+
     background:
-        radial-gradient(circle at 0% 100%,rgba(82,100,79,.08),transparent 25%),
+        radial-gradient(circle at 0% 100%,rgba(82,100,79,.16),transparent 25%),
         radial-gradient(circle at 100% 0%,rgba(180,151,85,.10),transparent 25%),
-        #fffdf7;
+        #f7f8f2;
 }
 
 .invitation-title{
@@ -166,9 +204,9 @@ body{
     font-size:24px;
     font-style:italic;
     line-height:1.5;
-    color:#777d72;
+    color:#687565;
     max-width:570px;
-    margin:25px auto;
+    margin:25px auto 8px;
 }
 
 .date{
@@ -179,6 +217,7 @@ body{
     margin:10px 0 25px;
 }
 
+
 /* =========================
    CARDS
 ========================= */
@@ -188,10 +227,14 @@ body{
     max-width:650px;
     margin:18px auto;
     padding:28px 20px;
-    background:#f1f4eb;
-    border:1px solid #d7c58e;
+
+    background:#e8eee2;
+
+    border:1px solid #c7cfbb;
     border-radius:20px;
-    box-shadow:0 8px 25px rgba(50,60,45,.06);
+
+    box-shadow:
+        0 8px 25px rgba(50,60,45,.08);
 }
 
 .card h2{
@@ -204,7 +247,7 @@ body{
 
 .detail-box{
     background:#fffdf7;
-    border:1px solid #ddd6c4;
+    border:1px solid #d7cdb1;
     border-radius:15px;
     padding:20px 14px;
 }
@@ -232,11 +275,20 @@ body{
     margin-top:16px;
     padding:12px 23px;
     border-radius:30px;
-    background:#52644f;
+
+    background:#7b8d72;
+
     color:white;
     text-decoration:none;
     font-size:12px;
+
+    transition:.3s;
 }
+
+.location-button:hover{
+    background:#687b61;
+}
+
 
 /* =========================
    COUNTDOWN
@@ -252,16 +304,20 @@ body{
 .time-box{
     min-width:70px;
     padding:12px 8px;
+
     background:#fffdf7;
-    border:1px solid #d7c58e;
+
+    border:1px solid #c7cfbb;
     border-radius:13px;
 }
 
 .time-box span{
     display:block;
+
     font-family:"Cormorant Garamond",serif;
     font-size:30px;
     font-weight:600;
+
     color:#52644f;
 }
 
@@ -269,8 +325,9 @@ body{
     font-size:9px;
     text-transform:uppercase;
     letter-spacing:1px;
-    color:#888;
+    color:#71806c;
 }
+
 
 /* =========================
    VERSE
@@ -290,6 +347,7 @@ body{
     font-weight:600;
 }
 
+
 /* =========================
    RSVP
 ========================= */
@@ -306,9 +364,12 @@ select,
 textarea{
     width:100%;
     padding:14px;
-    border:1px solid #d0c9b7;
+
+    border:1px solid #c7cfbb;
     border-radius:10px;
+
     background:white;
+
     font-family:"Montserrat",sans-serif;
     font-size:14px;
     color:#52644f;
@@ -323,10 +384,18 @@ textarea{
     border:0;
     padding:15px;
     border-radius:30px;
-    background:#52644f;
+
+    background:#7b8d72;
+
     color:white;
     font-size:14px;
     cursor:pointer;
+
+    transition:.3s;
+}
+
+.submit:hover{
+    background:#687b61;
 }
 
 .message{
@@ -342,6 +411,7 @@ textarea{
     font-size:32px;
     margin-top:30px;
 }
+
 
 /* =========================
    MOBILE
@@ -362,8 +432,16 @@ textarea{
         font-size:68px;
     }
 
+    /*
+       Smaller Times New Roman guest name
+       for mobile screens.
+    */
+
     .personal-greeting{
-        font-size:38px;
+        font-size:28px;
+        line-height:1.35;
+        letter-spacing:.5px;
+        max-width:330px;
     }
 
     .invited-text{
@@ -390,6 +468,10 @@ textarea{
         font-size:21px;
     }
 
+    .date{
+        font-size:27px;
+    }
+
     .card{
         padding:25px 15px;
     }
@@ -402,12 +484,15 @@ textarea{
         font-size:28px;
     }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="page">
+
 
 <!-- ==================================================
      PAGE 1 — PERSONAL OPENING
@@ -417,79 +502,105 @@ textarea{
 
 <div class="opening-card">
 
+
 <div class="flower">
 ✿ ❀ ✿
 </div>
+
 
 <div class="monogram">
 P & N
 </div>
 
+
 <div class="flower">
 ✿ ❀ ✿
 </div>
+
 
 <div class="guest-label">
 A special invitation for
 </div>
 
+
 <div id="personalGreeting" class="personal-greeting">
 Dear Guest,
 </div>
+
 
 <div class="invited-text">
 You are invited to the union of
 </div>
 
+
 <div class="couple-opening">
 Nokuzola & Pabalo
 </div>
+
 
 <div class="flower">
 ✿ ❀ ✿
 </div>
 
+
 <a href="#invitation" class="open-button">
 🥂 Open Invitation
 </a>
+
 
 </div>
 
 </section>
 
 
+
 <!-- ==================================================
-     PAGE 2 — THE ONE INVITATION
+     PAGE 2 — INVITATION
 ================================================== -->
 
 <section class="invitation" id="invitation">
+
 
 <div class="monogram">
 P & N
 </div>
 
+
 <div class="invitation-title">
 Pabalo & Nokuzola
 </div>
+
 
 <div class="names">
 invite you to celebrate their wedding
 </div>
 
+
+<!-- VERSE -->
+
 <div class="quote">
 “I have found the one whom my soul loves”
 </div>
 
+<div class="reference">
+Song of Solomon 3:4
+</div>
+
+
 <div class="flower">
 ✿ ❀ ✿
 </div>
+
 
 <div class="date">
 18 October 2026
 </div>
 
 
-<!-- VENUE -->
+
+<!-- ==================================================
+     VENUE
+================================================== -->
 
 <div class="card">
 
@@ -497,7 +608,9 @@ invite you to celebrate their wedding
 
 <div class="detail-box">
 
-<div class="icon">📍</div>
+<div class="icon">
+📍
+</div>
 
 <div class="detail-title">
 Grayson Manor
@@ -512,7 +625,9 @@ Bulawayo
 class="location-button"
 href="https://www.google.com/maps/search/?api=1&query=Grayson+Manor%2C+71+Burnside+Rd%2C+Bulawayo"
 target="_blank">
+
 📍 View Location
+
 </a>
 
 </div>
@@ -520,7 +635,10 @@ target="_blank">
 </div>
 
 
-<!-- CEREMONY -->
+
+<!-- ==================================================
+     CEREMONY
+================================================== -->
 
 <div class="card">
 
@@ -528,7 +646,9 @@ target="_blank">
 
 <div class="detail-box">
 
-<div class="icon">🕘</div>
+<div class="icon">
+🕘
+</div>
 
 <div class="detail-title">
 Ceremony Details
@@ -557,7 +677,10 @@ The ceremony begins at
 </div>
 
 
-<!-- DRESS CODE -->
+
+<!-- ==================================================
+     DRESS CODE
+================================================== -->
 
 <div class="card">
 
@@ -565,7 +688,9 @@ The ceremony begins at
 
 <div class="detail-box">
 
-<div class="icon">🖤</div>
+<div class="icon">
+🖤
+</div>
 
 <div class="detail-title">
 Black-Tie
@@ -583,7 +708,10 @@ for our elegant celebration.
 </div>
 
 
-<!-- INVITATION -->
+
+<!-- ==================================================
+     INVITATION
+================================================== -->
 
 <div class="card">
 
@@ -591,7 +719,9 @@ for our elegant celebration.
 
 <div class="detail-box">
 
-<div class="icon">✨</div>
+<div class="icon">
+✨
+</div>
 
 <div class="detail-title">
 Strictly by Invitation
@@ -609,7 +739,10 @@ for the named guest(s) only.
 </div>
 
 
-<!-- COUNTDOWN -->
+
+<!-- ==================================================
+     COUNTDOWN
+================================================== -->
 
 <div class="card">
 
@@ -617,39 +750,49 @@ for the named guest(s) only.
 
 <div class="countdown">
 
+
 <div class="time-box">
 <span id="days">0</span>
 <small>Days</small>
 </div>
+
 
 <div class="time-box">
 <span id="hours">0</span>
 <small>Hours</small>
 </div>
 
+
 <div class="time-box">
 <span id="minutes">0</span>
 <small>Minutes</small>
 </div>
+
 
 <div class="time-box">
 <span id="seconds">0</span>
 <small>Seconds</small>
 </div>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- BIBLE VERSE -->
+
+
+<!-- ==================================================
+     NOTE FROM US
+================================================== -->
 
 <div class="card">
 
 <h2>A Note From Us</h2>
 
 <div class="verse">
+
 “Above all these put on love, which binds everything together in perfect harmony.”
+
 </div>
 
 <div class="reference">
@@ -659,7 +802,10 @@ Colossians 3:14
 </div>
 
 
-<!-- GIFT -->
+
+<!-- ==================================================
+     GIFT
+================================================== -->
 
 <div class="card">
 
@@ -680,17 +826,24 @@ would be deeply appreciated.
 </div>
 
 
-<!-- RSVP -->
+
+<!-- ==================================================
+     RSVP
+================================================== -->
 
 <div class="card">
 
 <h2>RSVP</h2>
 
 <div class="detail-text" style="margin-bottom:18px;">
+
 Kindly confirm your attendance below.
+
 </div>
 
+
 <form id="rsvpForm">
+
 
 <input
 type="text"
@@ -698,6 +851,7 @@ id="guestName"
 placeholder="Your name"
 required
 >
+
 
 <select id="attendance" required>
 
@@ -715,35 +869,47 @@ Regretfully declining
 
 </select>
 
+
 <textarea
 id="note"
 placeholder="A message for Pabalo & Nokuzola (optional)">
 </textarea>
 
+
 <button
 class="submit"
 type="submit">
+
 Send RSVP
+
 </button>
+
 
 </form>
 
-<div id="message" class="message"></div>
+
+<div id="message" class="message">
+</div>
+
 
 </div>
+
 
 
 <div class="flower">
 ✿ ❀ ✿
 </div>
 
+
 <div class="footer">
 With love, Pabalo & Nokuzola ❤️
 </div>
 
+
 </section>
 
 </div>
+
 
 
 <script>
@@ -834,7 +1000,7 @@ const guestList = [
 "SYDNEY SIZIBA",
 "JULIAN SIZIBA",
 "KUDZAI MCHERWA",
-"TAFADZWA MUCHERWA",
+"TAFADZWA MUCHERERA",
 "WANDISWA NDLOVU",
 "SIMBARASHE NYONI",
 "DUMOLWENKOSI DUBE",
@@ -1043,14 +1209,17 @@ function(e){
 
     e.preventDefault();
 
+
     const name =
     document.getElementById("guestName")
     .value
     .trim();
 
+
     const attendance =
     document.getElementById("attendance")
     .value;
+
 
     const note =
     document.getElementById("note")
