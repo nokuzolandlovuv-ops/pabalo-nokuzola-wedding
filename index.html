@@ -260,6 +260,7 @@ font-size:10px;
 <div class="monogram">P ♡ N</div>
 
 <div class="small">Together with their families</div>
+  <div id="personalGreeting" class="personal-greeting"></div>
 <div id="personalGreeting" class="personal-greeting"></div>
 <div class="names">
 Pabalo <span class="amp">&</span> Nokuzola
@@ -461,21 +462,19 @@ Pabalo & Nokuzola
 <script>
 
 /* PERSONALISED GUEST NAME */
-
+<script>
 const params = new URLSearchParams(window.location.search);
 const guest = params.get("guest");
-
-const greeting = document.getElementById("personalGreeting");
 
 if (guest) {
   const decodedGuest = decodeURIComponent(guest);
 
-  document.getElementById("guestName").value = decodedGuest;
+  document.getElementById("personalGreeting").textContent =
+    "Dear " + decodedGuest + ",";
 
-  greeting.textContent = "Dear " + decodedGuest + ",";
-} else {
-  greeting.textContent = "You are warmly invited";
+  document.getElementById("guestName").value = decodedGuest;
 }
+</script>
 
 }
 
