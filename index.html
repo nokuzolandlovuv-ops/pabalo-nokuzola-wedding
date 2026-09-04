@@ -242,6 +242,12 @@ font-size:10px;
 }
 
 }
+  .personal-greeting{
+  font-family:cursive;
+  font-size:30px;
+  color:#b49755;
+  margin:15px 0 5px;
+  }
 </style>
 </head>
 
@@ -254,7 +260,7 @@ font-size:10px;
 <div class="monogram">P ♡ N</div>
 
 <div class="small">Together with their families</div>
-
+<div id="personalGreeting" class="personal-greeting"></div>
 <div class="names">
 Pabalo <span class="amp">&</span> Nokuzola
 </div>
@@ -459,11 +465,17 @@ Pabalo & Nokuzola
 const params = new URLSearchParams(window.location.search);
 const guest = params.get("guest");
 
-if(guest){
+const greeting = document.getElementById("personalGreeting");
 
-const decodedGuest = decodeURIComponent(guest);
+if (guest) {
+  const decodedGuest = decodeURIComponent(guest);
 
-document.getElementById("guestName").value = decodedGuest;
+  document.getElementById("guestName").value = decodedGuest;
+
+  greeting.textContent = "Dear " + decodedGuest + ",";
+} else {
+  greeting.textContent = "You are warmly invited";
+}
 
 }
 
