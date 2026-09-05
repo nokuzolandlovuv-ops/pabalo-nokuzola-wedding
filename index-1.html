@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f8f4e9">
+<title>Pabalo & Nokuzola | 18 October 2026</title>
+<style>
+:root{
+  --ivory:#fbf8ef;
+  --cream:#f3eddf;
+  --sage:#a9b69b;
+  --deep:#304333;
+  --gold:#c6a15b;
+  --gold2:#ead5a1;
+  --ink:#2f352d;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:var(--ivory);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+body{min-height:100vh}
+button{font:inherit}
+#app{position:relative;min-height:100vh;overflow:hidden;background:
+ radial-gradient(circle at 15% 15%,rgba(234,213,161,.25),transparent 28%),
+ radial-gradient(circle at 85% 80%,rgba(169,182,155,.22),transparent 32%),
+ linear-gradient(135deg,#fffdf7 0%,#f6f0e3 52%,#fbf8ef 100%)}
+
+/* soft cinematic atmosphere */
+#app:before,#app:after{
+ content:"";position:fixed;inset:-20%;pointer-events:none;z-index:0;
+ background:radial-gradient(circle,rgba(255,255,255,.8) 0 1px,transparent 2px);
+ background-size:90px 90px;opacity:.16;animation:floatDust 20s linear infinite
+}
+#app:after{background-size:140px 140px;opacity:.1;animation-duration:29s;animation-direction:reverse}
+@keyframes floatDust{to{transform:translate3d(50px,-70px,0)}}
+
+/* floral corners made entirely with CSS */
+.flower{position:absolute;width:110px;height:110px;z-index:2;pointer-events:none}
+.flower.tl{top:0;left:0}.flower.br{right:0;bottom:0;transform:rotate(180deg)}
+.flower.tr{right:0;top:0;transform:scaleX(-1)}.flower.bl{left:0;bottom:0;transform:scale(-1)}
+.rose{position:absolute;width:34px;height:34px;border-radius:50%;
+ background:radial-gradient(circle at 38% 35%,#fff 0 12%,#eee8d9 13% 30%,#fff 31% 47%,#dcd6c8 48% 58%,#fff 59%);
+ filter:drop-shadow(0 5px 5px rgba(47,67,51,.14));}
+.r1{left:8px;top:20px}.r2{left:39px;top:6px;transform:scale(.78)}.r3{left:55px;top:42px;transform:scale(.63)}
+.leaf{position:absolute;width:42px;height:17px;border-radius:100% 0 100% 0;background:linear-gradient(135deg,var(--sage),#71816d);opacity:.88}
+.l1{left:10px;top:57px;transform:rotate(25deg)}.l2{left:43px;top:70px;transform:rotate(-22deg)}
+.l3{left:67px;top:25px;transform:rotate(38deg);transform:scale(.7)}
+.stem{position:absolute;width:2px;height:85px;background:#74846f;left:45px;top:20px;transform:rotate(28deg);transform-origin:top}
+
+/* envelope / opening */
+#opening{
+ position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;
+ perspective:1400px;background:linear-gradient(145deg,#fffdf7,#efe8d9);
+ transition:opacity .9s ease,visibility .9s ease
+}
+#opening.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.scene{width:min(86vw,430px);height:min(78vh,680px);position:relative;transform-style:preserve-3d;animation:sceneFloat 5s ease-in-out infinite}
+@keyframes sceneFloat{50%{transform:translateY(-9px) rotateX(1deg)}}
+.envelope{
+ position:absolute;inset:0;border:1px solid rgba(198,161,91,.7);border-radius:4px;
+ background:linear-gradient(145deg,#f8f3e7,#e8dfce);
+ box-shadow:0 35px 80px rgba(48,67,51,.18),inset 0 0 0 8px rgba(255,255,255,.25);
+ transform-style:preserve-3d;overflow:hidden
+}
+.envelope:before{content:"";position:absolute;inset:16px;border:1px solid rgba(198,161,91,.65)}
+.flap{position:absolute;left:0;right:0;top:0;height:48%;clip-path:polygon(0 0,100% 0,50% 100%);
+ background:linear-gradient(150deg,#fffaf0,#ddd2bd);border-bottom:1px solid rgba(198,161,91,.55);transform-origin:top;z-index:3;transition:transform 1.1s cubic-bezier(.2,.75,.2,1)}
+.opening-open .flap{transform:rotateX(165deg)}
+.seal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;z-index:5;
+ background:radial-gradient(circle at 35% 30%,#f2d99e,#bd9344 70%,#9d742e);
+ color:white;display:grid;place-items:center;font-size:25px;letter-spacing:-2px;
+ box-shadow:0 12px 25px rgba(60,45,20,.25);border:3px solid #ead6a2}
+.opening-open .seal{animation:sealAway .8s forwards}
+@keyframes sealAway{to{opacity:0;transform:translate(-50%,-50%) scale(1.4)}}
+.cover{
+ position:absolute;inset:35px;background:var(--ivory);border:1px solid var(--gold);
+ display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+ box-shadow:0 20px 45px rgba(48,67,51,.14);transform:translateZ(-5px);overflow:hidden
+}
+.cover:after{content:"";position:absolute;inset:14px;border:1px solid rgba(198,161,91,.55)}
+.monogram{font-family:"Times New Roman",serif;color:#b48a3e;font-size:72px;letter-spacing:-13px;line-height:1}
+.script{font-family:"Brush Script MT","Segoe Script",cursive}
+.cover h1{margin:20px 0 6px;font-size:34px;font-weight:400;color:#87662e}
+.cover p{font-size:13px;letter-spacing:3px;text-transform:uppercase;margin:0;color:var(--deep)}
+.tap{position:absolute;bottom:27px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#6d765e;white-space:nowrap;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.45}}
+
+/* main invitation */
+main{position:relative;z-index:1;perspective:1400px}
+.page{
+ min-height:100vh;width:100%;padding:70px 24px 55px;display:flex;align-items:center;justify-content:center;
+ position:relative;overflow:hidden;transform-style:preserve-3d
+}
+.card{
+ width:min(92vw,520px);min-height:min(78vh,760px);position:relative;padding:58px 30px 50px;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+ background:rgba(251,248,239,.93);border:1px solid rgba(198,161,91,.75);
+ box-shadow:0 28px 70px rgba(48,67,51,.13),inset 0 0 0 7px rgba(255,255,255,.42);
+ overflow:hidden;transform-style:preserve-3d
+}
+.card:before{content:"";position:absolute;inset:17px;border:1px solid rgba(198,161,91,.45);pointer-events:none}
+.card:after{content:"";position:absolute;width:180px;height:180px;left:-90px;top:-90px;border-radius:50%;background:rgba(169,182,155,.18);filter:blur(2px)}
+.reveal{opacity:0;transform:translateY(30px) scale(.98);transition:opacity 1s ease,transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.page.active .reveal{opacity:1;transform:none}
+.kicker{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#777c68;margin:0 0 18px}
+.names{font-family:"Brush Script MT","Segoe Script",cursive;font-size:clamp(42px,12vw,72px);font-weight:400;color:#9b7735;line-height:.95;margin:10px 0}
+.small-rule{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto}
+.quote{font-style:italic;font-size:18px;line-height:1.7;max-width:390px;color:#50594b}
+.gold{color:#9b7735}
+.bigdate{font-family:"Times New Roman",serif;font-size:66px;color:var(--deep);line-height:.9;margin:8px 0}
+.month{font-size:22px;letter-spacing:5px;text-transform:uppercase;color:#9b7735}
+.info-title{font-size:28px;color:var(--deep);margin:10px 0}
+.info{font-size:17px;line-height:1.7;max-width:370px}
+.icon{font-size:37px;color:#b48a3e;margin-bottom:10px}
+.message{font-size:18px;line-height:1.9;max-width:390px}
+.verse{font-size:21px;line-height:1.85;font-style:italic;max-width:400px}
+.reference{margin-top:20px;letter-spacing:2px;font-size:12px;text-transform:uppercase;color:#9b7735}
+.blacktie{
+ background:linear-gradient(145deg,#566953,#304333);color:#fff;
+ border-color:#d8ba7a;box-shadow:0 30px 70px rgba(38,53,42,.28)
+}
+.blacktie:before{border-color:rgba(234,213,161,.55)}
+.blacktie .kicker,.blacktie .info{color:#f4efe2}
+.blacktie .info-title{color:#f1d28e;font-size:44px;letter-spacing:3px}
+.bow{font-size:58px;margin-bottom:12px}
+.gift-icon{font-size:42px;color:#b48a3e}
+.final .card{background:linear-gradient(145deg,#fffdf7,#f2eadc)}
+.final .monogram{font-size:92px}
+.final .names{font-size:58px}
+.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:#d6b86e;opacity:.55;animation:particle 5s linear infinite}
+@keyframes particle{0%{transform:translateY(30vh) scale(.5);opacity:0}20%{opacity:.65}100%{transform:translateY(-50vh) scale(1.3);opacity:0}}
+
+/* controls */
+#hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:20;
+ padding:9px 14px;border-radius:30px;background:rgba(255,253,247,.82);backdrop-filter:blur(10px);
+ border:1px solid rgba(198,161,91,.35);font-size:11px;letter-spacing:1px;color:#5c6757}
+@media(max-width:420px){
+ .page{padding:50px 15px}.card{min-height:78vh;padding:50px 24px}
+ .quote,.message,.verse{font-size:16px}.info{font-size:15px}
+}
+</style>
+</head>
+<body>
+<div id="app">
+
+<div id="opening" aria-label="Open wedding invitation">
+  <div class="scene">
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+      <div class="cover">
+        <div class="monogram">P&N</div>
+        <h1 class="script">Pabalo & Nokuzola</h1>
+        <p>18 October 2026</p>
+        <div class="tap">Tap to open</div>
+      </div>
+      <div class="seal">P&N</div>
+    </div>
+  </div>
+</div>
+
+<main id="pages">
+
+<section class="page active">
+  <div class="card">
+    <div class="flower tl"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="flower br"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="reveal">
+      <div class="monogram">P&N</div>
+      <div class="names">Pabalo & Nokuzola</div>
+      <div class="small-rule"></div>
+      <div class="quote">“I have found the one whom my soul loves.”</div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="card">
+    <div class="flower tr"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="reveal">
+      <p class="kicker">A day to remember</p>
+      <div class="bigdate">18</div>
+      <div class="month">October</div>
+      <div class="month">2026</div>
+      <div class="small-rule"></div>
+      <p class="info">With joyful hearts, we invite you to celebrate the wedding of</p>
+      <div class="names" style="font-size:46px">Pabalo & Nokuzola</div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="card">
+    <div class="flower bl"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="reveal">
+      <div class="icon">⌖</div>
+      <p class="kicker">The celebration</p>
+      <div class="info-title">Grayson Manor</div>
+      <div class="info">71 Burnside Rd<br>Bulawayo</div>
+      <div class="small-rule"></div>
+      <div class="icon">◷</div>
+      <p class="kicker">The ceremony</p>
+      <div class="info-title">10:00</div>
+      <div class="info">Guests seated by <strong>09:40</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="card blacktie">
+    <div class="flower tl"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="reveal">
+      <div class="bow">⌁</div>
+      <p class="kicker">Dress code</p>
+      <div class="info-title">BLACK TIE</div>
+      <div class="small-rule"></div>
+      <div class="info">Guests are to wear black.</div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="card">
+    <div class="flower tr"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="reveal">
+      <p class="kicker">With joyful hearts</p>
+      <div class="message">We invite you to join us as we celebrate the wedding of <span class="gold"><strong>Pabalo & Nokuzola</strong></span>.<br><br>Your presence will make our day even more meaningful as we begin this beautiful new chapter together.</div>
+      <div class="small-rule"></div>
+      <p class="kicker">18 October 2026</p>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="card">
+    <div class="flower tl"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="reveal">
+      <div class="icon">✦</div>
+      <p class="kicker">A word of love</p>
+      <div class="verse">“And above all these put on love, which binds everything together in perfect harmony.”</div>
+      <div class="reference">Colossians 3:14</div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="card">
+    <div class="flower br"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="reveal">
+      <div class="gift-icon">♢</div>
+      <p class="kicker">With gratitude</p>
+      <div class="message">Your presence is the greatest gift we could ask for.<br><br>Should you wish to bless us further, a <span class="gold"><strong>cash gift</strong></span> would be gratefully appreciated as we begin our new journey together.</div>
+    </div>
+  </div>
+</section>
+
+<section class="page final">
+  <div class="card">
+    <div class="flower tl"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="flower br"><span class="stem"></span><i class="rose r1"></i><i class="rose r2"></i><i class="rose r3"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i></div>
+    <div class="reveal">
+      <div class="monogram">P&N</div>
+      <div class="names">Pabalo & Nokuzola</div>
+      <div class="small-rule"></div>
+      <p class="kicker">18 October 2026</p>
+      <div class="quote">A beautiful beginning, a lifetime of love.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="hint">Swipe up or down to turn the invitation pages</div>
+</div>
+
+<script>
+(function(){
+  const opening=document.getElementById('opening');
+  const envelope=document.getElementById('envelope');
+  const pages=[...document.querySelectorAll('.page')];
+  const hint=document.getElementById('hint');
+  let index=0, opened=false, locked=false, startY=0, startX=0;
+
+  function activate(i){
+    index=Math.max(0,Math.min(pages.length-1,i));
+    pages.forEach((p,n)=>p.classList.toggle('active',n===index));
+    pages[index].scrollIntoView({behavior:'smooth',block:'center'});
+    hint.textContent=index===pages.length-1 ? 'P & N • 18 October 2026' : 'Swipe up or down to turn the invitation pages';
+  }
+
+  function openInvite(){
+    if(opened)return;
+    opened=true;
+    envelope.classList.add('opening-open');
+    setTimeout(()=>opening.classList.add('hidden'),1050);
+    setTimeout(()=>activate(0),1150);
+  }
+
+  opening.addEventListener('click',openInvite);
+  opening.addEventListener('touchend',openInvite,{passive:true});
+
+  window.addEventListener('wheel',e=>{
+    if(!opened||locked)return;
+    if(Math.abs(e.deltaY)<18)return;
+    locked=true;
+    activate(index+(e.deltaY>0?1:-1));
+    setTimeout(()=>locked=false,850);
+  },{passive:true});
+
+  window.addEventListener('touchstart',e=>{
+    if(!opened)return;
+    startY=e.touches[0].clientY; startX=e.touches[0].clientX;
+  },{passive:true});
+
+  window.addEventListener('touchend',e=>{
+    if(!opened||locked)return;
+    const dy=e.changedTouches[0].clientY-startY;
+    const dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dy)<45 || Math.abs(dy)<Math.abs(dx))return;
+    locked=true;
+    activate(index+(dy<0?1:-1));
+    setTimeout(()=>locked=false,850);
+  },{passive:true});
+
+  document.addEventListener('keydown',e=>{
+    if(!opened)return;
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){e.preventDefault();activate(index+1)}
+    if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();activate(index-1)}
+  });
+
+  // Tiny gold particles for the cinematic finish.
+  for(let i=0;i<18;i++){
+    const p=document.createElement('i');
+    p.className='particle';
+    p.style.left=(5+Math.random()*90)+'%';
+    p.style.top=(45+Math.random()*55)+'%';
+    p.style.animationDelay=(Math.random()*5)+'s';
+    p.style.animationDuration=(4+Math.random()*5)+'s';
+    document.getElementById('app').appendChild(p);
+  }
+})();
+</script>
+</body>
+</html>
